@@ -1,0 +1,71 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Century Gothic;
+  color: #333;
+  background: #1DCF5D;  
+}
+
+h1 {
+	text-align: center;
+	font-size: 3em;
+}
+
+#main {
+  width: 100%;
+  height: 100%;
+  white-space: nowrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  user-select: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  transform: scale(0.98);
+  will-change: transform;
+  position: relative;
+   -ms-overflow-style: none;  
+  scrollbar-width: none; 
+}
+
+
+#main.active {
+  background: rgba(255,255,255,0.3);
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+  transform: scale(1);
+}
+
+#main::-webkit-scrollbar {
+  display: none;
+  background: url("");
+}
+
+.result {
+  display: inline-block;
+  border: 2px solid red;
+}
+
+
+.track {
+  background: #333;
+  width: 350px;
+  height: 350px;
+  font-size: 1.2em;
+  font-weight: 100;
+  color: rgba(0,0,0,0.15);
+  box-shadow: inset 0 0 0 10px rgba(0,0,0,0.15);
+ }
+
+img {
+   width: 100%;
+}
+
+h3 {
+  text-align: center;
+  color: #fff;
+  
+}
+
