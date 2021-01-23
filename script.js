@@ -4,6 +4,7 @@ let isDown = false;
 let startX;
 let scrollLeft;
 let images = Array.from(document.getElementsByTagName("img"));
+let controls = Array.from(document.querySelectorAll("span"));
 
 slider.addEventListener("mousedown",(e) => {
 	isDown = true;
@@ -32,6 +33,13 @@ slider.addEventListener("mousemove",(e) => {
 });
 
 
-// images.map(image => image.addEventListener("click",function(e){
-//  body[0].style.background = `url(${e.target.currentSrc})`;
-// }));
+function handleControls(){
+ controls.map(control => control.addEventListener("click",(e) => {
+  let song = e.target.nextElementSibling;
+  console.log(song);
+  song.paused ? song.play() : song.pause();
+  
+  }));
+}
+
+window.onload = handleControls();

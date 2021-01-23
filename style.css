@@ -57,6 +57,23 @@ h1 {
   font-weight: 100;
   color: rgba(0,0,0,0.15);
   box-shadow: inset 0 0 0 10px rgba(0,0,0,0.15);
+  position: relative;
+ }
+
+ audio {
+  display: none;
+ }
+
+ span {
+  position: relative;
+  z-index: 10;
+  right: 222px;
+  bottom: 180px;
+  font-size: 1.5em;
+  color: #1DCF5D;
+  background: #333;
+  padding: 33px;
+  border-radius: 100%;
  }
 
  .info {
@@ -67,11 +84,12 @@ h1 {
 
 img {
    width: 100%;
+   position: relative;
+   z-index: 0;
 }
 
 h3 {
   text-align: center;
   color: #fff;
-  
 }
 
