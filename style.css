@@ -93,3 +93,9 @@ h3 {
   color: #fff;
 }
 
+
+/* ALLOWS ELEMENTS WITHIN THE CLICKED SPAN TO BE PART OF THE CLICK EVENT */
+span > * {
+  pointer-events: none;
+}
+

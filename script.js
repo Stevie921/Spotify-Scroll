@@ -33,12 +33,20 @@ slider.addEventListener("mousemove",(e) => {
 });
 
 
+/* CONTROLS FOR PAUSING AND PLAYING THE SONGS AND CHANGING THE ICON AS NEEDED */
 function handleControls(){
  controls.map(control => control.addEventListener("click",(e) => {
   let song = e.target.nextElementSibling;
-  console.log(song);
+  let icon = e.target.children[0];
+  let isPlaying = icon.classList.contains("fa-play");
   song.paused ? song.play() : song.pause();
-  
+   if(isPlaying){
+     icon.classList.remove("fa-play");
+     icon.classList.add("fa-pause");
+   } else {
+     icon.classList.remove("fa-pause");
+     icon.classList.add("fa-play");
+   }
   }));
 }
 
