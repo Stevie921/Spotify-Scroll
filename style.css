@@ -74,6 +74,7 @@ h1 {
   background: #333;
   padding: 33px;
   border-radius: 100%;
+  transition: background 3s;
  }
 
  .info {
@@ -99,3 +100,7 @@ span > * {
   pointer-events: none;
 }
 
+
+.pulse {
+  background: transparent;
+}

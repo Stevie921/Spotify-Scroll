@@ -5,6 +5,8 @@ let startX;
 let scrollLeft;
 let images = Array.from(document.getElementsByTagName("img"));
 let controls = Array.from(document.querySelectorAll("span"));
+let controlStyle;
+let code = 333;
 
 slider.addEventListener("mousedown",(e) => {
 	isDown = true;
@@ -39,15 +41,31 @@ function handleControls(){
   let song = e.target.nextElementSibling;
   let icon = e.target.children[0];
   let isPlaying = icon.classList.contains("fa-play");
-  song.paused ? song.play() : song.pause();
+  
+ song.paused ? song.play() : song.pause();
    if(isPlaying){
      icon.classList.remove("fa-play");
      icon.classList.add("fa-pause");
-   } else {
+     controlStyle = setInterval(function(){ pulse(e.target);}, 1500);
+    } else {
      icon.classList.remove("fa-pause");
      icon.classList.add("fa-play");
-   }
-  }));
+     clearInterval(controlStyle);
+    }
+   }));
 }
+
+
+function pulse(ele){
+  if(!ele.classList.contains("pulse")){
+  	ele.classList.add("pulse");
+  } else {
+  	ele.classList.remove("pulse");
+  }
+ }
+
+
+
+
 
 window.onload = handleControls();
